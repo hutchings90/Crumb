@@ -13,40 +13,7 @@
 </head>
 <body>
 	<div id='game'>
-		<div id='computer-stores'>
-			<div id='computer-stash' class='store stash'>
-				<div class='label'>Stash</div>
-				<div>
-					<div>
-						<div><div class='crumb green'></div></div>
-						<div>x<span>10</span></div>
-					</div>
-				</div>
-			</div>
-			<div id='computer-hand' class='store'>
-				<div class='label'>Hand</div>
-				<div>
-					<div>
-						<div><div class='crumb green'></div></div>
-						<div>x<span>0</span></div>
-					</div>
-					<div>
-						<div><div class='crumb blue'></div></div>
-						<div>x<span>0</span></div>
-					</div>
-				</div>
-			</div>
-			<div id='computer-base' class='store'>
-				<div class='label'>Base</div>
-				<div>
-					<div>
-						<div><div class='crumb green'></div></div>
-						<div>x<span>0</span></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<svg id='board' height='420' width='363.734'>
+		<svg id='board' height='519.62' width='450' viewBox='0, 0, 259.81, 300'>
 			<g>
 				<polygon class='gate' points='77.943,30 129.905,0 181.867,30 155.886,45 129.905,30 103.924,45'></polygon>
 				<polygon class='gate' points='51.962,45 0,75 0,135 25.981,120 25.981,90 51.962,75'></polygon>
@@ -86,35 +53,72 @@
 			</g>
 			<g id='crumbs'></g>
 		</svg>
-		<div id='human-stores'>
-			<div id='human-stash' class='store stash'>
-				<div class='label'>Stash</div>
-				<div>
+		<div>
+			<div id='computer-stores' class='stores'>
+				<div class='label'>Computer</div>
+				<div id='computer-stash' class='store stash'>
+					<div class='label'>Stash</div>
 					<div>
-						<div><div class='crumb blue'></div></div>
-						<div>x<span>10</span></div>
+						<div>
+							<div><div class='crumb green'></div></div>
+							<div>x<span>10</span></div>
+						</div>
+					</div>
+				</div>
+				<div id='computer-hand' class='store'>
+					<div class='label'>Hand</div>
+					<div>
+						<div>
+							<div><div class='crumb green'></div></div>
+							<div>x<span>0</span></div>
+						</div>
+						<div>
+							<div><div class='crumb blue'></div></div>
+							<div>x<span>0</span></div>
+						</div>
+					</div>
+				</div>
+				<div id='computer-base' class='store'>
+					<div class='label'>Base</div>
+					<div>
+						<div>
+							<div><div class='crumb green'></div></div>
+							<div>x<span>0</span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div id='human-hand' class='store'>
-				<div class='label'>Hand</div>
-				<div>
+			<div id='human-stores' class='stores'>
+				<div class='label'>Human</div>
+				<div id='human-stash' class='store stash'>
+					<div class='label'>Stash</div>
 					<div>
-						<div><div class='crumb blue'></div></div>
-						<div>x<span>0</span></div>
-					</div>
-					<div>
-						<div><div class='crumb green'></div></div>
-						<div>x<span>0</span></div>
+						<div>
+							<div><div class='crumb blue'></div></div>
+							<div>x<span>10</span></div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div id='human-base' class='store'>
-				<div class='label'>Base</div>
-				<div>
+				<div id='human-hand' class='store'>
+					<div class='label'>Hand</div>
 					<div>
-						<div><div class='crumb blue'></div></div>
-						<div>x<span>0</span></div>
+						<div>
+							<div><div class='crumb blue'></div></div>
+							<div>x<span>0</span></div>
+						</div>
+						<div>
+							<div><div class='crumb green'></div></div>
+							<div>x<span>0</span></div>
+						</div>
+					</div>
+				</div>
+				<div id='human-base' class='store'>
+					<div class='label'>Base</div>
+					<div>
+						<div>
+							<div><div class='crumb blue'></div></div>
+							<div>x<span>0</span></div>
+						</div>
 					</div>
 				</div>
 			</div>

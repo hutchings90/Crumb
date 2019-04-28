@@ -1,14 +1,14 @@
-body {
-	padding: 0;
-	margin: 0;
-}
-
 text {
 	font-size: 12px;
 }
 
 #game {
 	text-align: center;
+}
+
+.stores {
+	display: inline-block;
+	margin: 0 50px;
 }
 
 .store {
