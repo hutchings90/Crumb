@@ -10,6 +10,10 @@ text {
 	text-align: center;
 }
 
+#winner-text text {
+	text-transform: uppercase;
+}
+
 .stores {
 	display: inline-block;
 	margin: 0 50px;

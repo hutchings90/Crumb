@@ -5,6 +5,9 @@ function Game() {
 	this.view = document.getElementById('game');
 	this.board = document.getElementById('board');
 	this.crumbs = document.getElementById('crumbs');
+	this.winBackground = document.getElementById('win-background');
+	this.humanWinText = document.getElementById('human-win-text');
+	this.computerWinText = document.getElementById('computer-win-text');
 	this.activePlayer = null;
 	this.activeSpace = null;
 	this.setEventListeners();
@@ -13,6 +16,9 @@ function Game() {
 }
 
 Game.prototype.start = function() {
+	this.winBackground.setAttribute('visibility', 'hidden');
+	this.humanWinText.setAttribute('visibility', 'hidden');
+	this.computerWinText.setAttribute('visibility', 'hidden');
 	var players = this.players;
 	while (this.crumbs.lastChild) this.crumbs.removeChild(this.crumbs.lastChild);
 	for (var i = players.length - 1; i >= 0; i--) {
@@ -28,6 +34,9 @@ Game.prototype.end = function() {
 		me.start();
 	}, 5000);
 	v.clearHexes();
+	this.winBackground.setAttribute('visibility', 'visible');
+	if (this.activePlayer.name == 'Human') this.humanWinText.setAttribute('visibility', 'visible');
+	else this.computerWinText.setAttribute('visibility', 'visible');
 };
 
 Game.prototype.activatePlayer = function(i) {
