@@ -1,0 +1,103 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+text {
+	font-size: 12px;
+}
+
+#game {
+	text-align: center;
+}
+
+.store {
+	padding: 2px;
+	display: inline-block;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: top;
+}
+
+.store > div > div {
+	padding: 3px;
+}
+
+.store > div:not(.label) > div {
+	display: inline-block;
+}
+
+.crumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.crumb.red {
+	background: red;
+}
+
+.crumb.blue {
+	background: blue;
+}
+
+.crumb.green {
+	background: green;
+}
+
+.crumb.orange {
+	background: orange;
+}
+
+.hex {
+	fill: #aaaaaa;
+}
+
+.hex.current, .gate.current {
+	fill: #eeee00;
+}
+
+.hex.available, .gate.available {
+	fill: #00ee00;
+}
+
+.hex.used, .gate.used {
+	fill: #ee0000;
+}
+
+.hex, .gate {
+	display: inline-block;
+	fill-opacity: 1;
+	stroke: black;
+	stroke-width: 1;
+}
+
+.available {
+	cursor: pointer;
+}
+
+.hex.available:hover, .gate.available:hover {
+	animation: spaceAvailable .5s linear 0s infinite alternate;
+}
+
+div.available {
+	background: #00ee00;
+}
+
+div.selected {
+	background: #eeee00;
+}
+
+div.available:hover {
+	animation: divAvailable .5s linear 0s infinite alternate;
+}
+
+@keyframes spaceAvailable {
+	to { fill-opacity: 0; }
+}
+
+@keyframes divAvailable {
+	to { background: white; }
+}

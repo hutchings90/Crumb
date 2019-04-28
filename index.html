@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crumb Online</title>
+	<link rel='stylesheet' type='text/css' href='styles/styles.css'>
+	<script src='js/View.js'></script>
+	<script src='js/Crumb.js'></script>
+	<script src='js/Player.js'></script>
+	<script src='js/Human.js'></script>
+	<script src='js/Computer.js'></script>
+	<script src='js/Game.js'></script>
+	<script src='js/main.js'></script>
+</head>
+<body>
+	<div id='game'>
+		<div id='computer-stores'>
+			<div id='computer-stash' class='store stash'>
+				<div class='label'>Stash</div>
+				<div>
+					<div>
+						<div><div class='crumb green'></div></div>
+						<div>x<span>10</span></div>
+					</div>
+				</div>
+			</div>
+			<div id='computer-hand' class='store'>
+				<div class='label'>Hand</div>
+				<div>
+					<div>
+						<div><div class='crumb green'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+					<div>
+						<div><div class='crumb blue'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+				</div>
+			</div>
+			<div id='computer-base' class='store'>
+				<div class='label'>Base</div>
+				<div>
+					<div>
+						<div><div class='crumb green'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<svg id='board' height='420' width='363.734'>
+			<g>
+				<polygon class='gate' points='77.943,30 129.905,0 181.867,30 155.886,45 129.905,30 103.924,45'></polygon>
+				<polygon class='gate' points='51.962,45 0,75 0,135 25.981,120 25.981,90 51.962,75'></polygon>
+				<polygon class='gate' points='207.848,45 259.81,75 259.81,135 233.829,120 233.829,90 207.848,75'></polygon>
+				<polygon class='gate' points='0,165 0,225 51.962,255 51.962,225 25.981,210 25.981,180'></polygon>
+				<polygon class='gate' points='207.848,255 259.81,225 259.81,165 233.829,180 233.829,210 207.848,225'></polygon>
+				<polygon class='gate' points='77.943,270 129.905,300 181.867,270 155.886,255 129.905,270 103.924,255'></polygon>
+			</g>
+			<g>
+				<polygon class='hex' points='77.943,30 103.924,45 103.924,75 77.945,90 51.962,75 51.962,45'></polygon>
+				<polygon class='hex' points='129.905,30 155.886,45 155.886,75 129.905,90 103.924,75 103.924,45'></polygon>
+				<polygon class='hex' points='181.867,30 207.848,45 207.848,75 181.867,90 155.886,75 155.886,45'></polygon>
+			</g>
+			<g>
+				<polygon class='hex' points='51.962,75 77.943,90 77.943,120 51.962,135 25.981,120 25.981,90'></polygon>
+				<polygon class='hex' points='103.924,75 129.905,90 129.905,120 103.924,135 77.943,120 77.943,90'></polygon>
+				<polygon class='hex' points='155.886,75 181.867,90 181.867,120 155.886,135 129.905,120 129.905,90'></polygon>
+				<polygon class='hex' points='207.848,75 233.829,90 233.829,120 207.848,135 181.867,120 181.867,90'></polygon>
+			</g>
+			<g>
+				<polygon class='hex' points='25.981,120 51.962,135 51.962,165 25.981,180 0,165 0,135'></polygon>
+				<polygon class='hex' points='77.943,120 103.924,135 103.924,165 77.943,180 51.962,165 51.962,135'></polygon>
+				<polygon class='hex' points='129.905,120 155.886,135 155.886,165 129.905,180 103.924,165 103.924,135'></polygon>
+				<polygon class='hex' points='181.867,120 207.848,135 207.848,165 181.867,180 155.886,165 155.886,135'></polygon>
+				<polygon class='hex' points='233.829,120 259.81,135 259.81,165 233.829,180 207.848,165 207.848,135'></polygon>
+			</g>
+			<g>
+				<polygon class='hex' points='51.962,165 77.943,180 77.943,210 51.962,225 25.981,210 25.981,180'></polygon>
+				<polygon class='hex' points='103.924,165 129.905,180 129.905,210 103.924,225 77.943,210 77.943,180'></polygon>
+				<polygon class='hex' points='155.886,165 181.867,180 181.867,210 155.886,225 129.905,210 129.905,180'></polygon>
+				<polygon class='hex' points='207.848,165 233.829,180 233.829,210 207.848,225 181.867,210 181.867,180'></polygon>
+			</g>
+			<g>
+				<polygon class='hex' points='77.943,210 103.924,225 103.924,255 77.943,270 51.962,255 51.962,225'></polygon>
+				<polygon class='hex' points='129.905,210 155.886,225 155.886,255 129.905,270 103.924,255 103.924,225'></polygon>
+				<polygon class='hex' points='181.867,210 207.848,225 207.848,255 181.867,270 155.886,255 155.886,225'></polygon>
+			</g>
+			<g id='crumbs'></g>
+		</svg>
+		<div id='human-stores'>
+			<div id='human-stash' class='store stash'>
+				<div class='label'>Stash</div>
+				<div>
+					<div>
+						<div><div class='crumb blue'></div></div>
+						<div>x<span>10</span></div>
+					</div>
+				</div>
+			</div>
+			<div id='human-hand' class='store'>
+				<div class='label'>Hand</div>
+				<div>
+					<div>
+						<div><div class='crumb blue'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+					<div>
+						<div><div class='crumb green'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+				</div>
+			</div>
+			<div id='human-base' class='store'>
+				<div class='label'>Base</div>
+				<div>
+					<div>
+						<div><div class='crumb blue'></div></div>
+						<div>x<span>0</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
