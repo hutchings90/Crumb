@@ -317,7 +317,7 @@ Game.prototype.makeHexCrumbGroup = function(space, crumb) {
 	var col = Number(space.dataset.col);
 	var point = space.points[0];
 	var x = point.x;
-	var y = point.y + (25.981 * (crumb.color == 'blue' ? .5 : 1.5));
+	var y = point.y + (30 * (crumb.color == 'blue' ? .5 : 1.5));
 	g.appendChild(circle);
 	g.appendChild(text);
 	g.id = 'crumb-group-' + row + '-' + col + '-' + crumb.color;
